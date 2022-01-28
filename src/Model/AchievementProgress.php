@@ -64,6 +64,15 @@ class AchievementProgress extends Model
     ];
 
     /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'achiever_type',
+    ];
+
+    /**
      * Get the notifiable entity that the achievement progress belongs to.
      *
      * @return MorphTo
