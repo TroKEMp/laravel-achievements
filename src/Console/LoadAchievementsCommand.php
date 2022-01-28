@@ -86,6 +86,9 @@ class LoadAchievementsCommand extends Command
         $bar = $this->output->createProgressBar(count($objects));
 
         foreach ($objects as $object) {
+            if (is_subclass_of($object, 'Assada\Achievements\AchievementChain'))
+                continue;
+
             $model = $object->getModel();
 
             $bar->advance();
