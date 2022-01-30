@@ -38,6 +38,11 @@ abstract class Achievement implements CanAchieve
      */
     public $points = 1;
 
+    /**
+     * The amount of XP achiever will get on unlock.
+     */
+    public $xp = 1;
+
     /*
      * Whether this is a secret achievement or not.
      */
@@ -108,6 +113,7 @@ abstract class Achievement implements CanAchieve
             $model->name = $this->name;
             $model->description = $this->description;
             $model->points = $this->points;
+            $model->xp = $this->xp;
             $model->secret = $this->secret;
 
             // Syncs

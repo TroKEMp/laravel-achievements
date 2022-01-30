@@ -37,6 +37,7 @@ class CreateAchievementsTables extends Migration
                 $table->string('name');
                 $table->string('description');
                 $table->unsignedInteger('points')->default(1);
+                $table->unsignedInteger('xp')->default(1);
                 $table->boolean('secret')->default(false);
                 $table->string('class_name');
                 $table->timestamps();
