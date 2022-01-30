@@ -27,7 +27,7 @@ trait EntityRelationsAchievements
         }
         return $this->morphMany(AchievementProgress::class, 'achiever')
             ->leftJoin(config('achievements.table_names.details'), config('achievements.table_names.progress').'.achievement_id', '=', config('achievements.table_names.details').'.id')
-            ->select(config('achievements.table_names.progress').'.*', config('achievements.table_names.details').'.name as _name', config('achievements.table_names.details').'.description as _desc', config('achievements.table_names.details').'.points as _points')
+            ->select(config('achievements.table_names.progress').'.*', config('achievements.table_names.details').'.name as _name', config('achievements.table_names.details').'.description as _desc', config('achievements.table_names.details').'.points as _points', config('achievements.table_names.details').'.xp as _xp')
             ->orderBy(config('achievements.table_names.progress').'.updated_at', 'desc');
     }
 
